@@ -26,6 +26,6 @@ while read i; do
     antismash --databases $ANTISMASH_DATA_PATH --genefinding-tool prodigal-m --output-dir antismash_${contigs%_contigs*} --output-basename ${contigs%_contigs*} --taxon bacteria -c 40 --cb-knownclusters --cc-mibig --tfbs --fimo --no-enable-genefunctions ${contigs}
     python /work/dsamuelson/mmandolfo/sbatch_code2/antismash2csv.py -o ${contigs%_contigs*}.csv antismash_${contigs%_contigs*}
     rm ${contigs}
-done < chunk
+done < test.contigs
 
 
